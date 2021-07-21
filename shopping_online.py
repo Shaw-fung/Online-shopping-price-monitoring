@@ -94,15 +94,13 @@ def f_c_jd_cookie(dict_select_area):  # 用于获取本地库存cookie生成
     unicode_code = code.encode('unicode_escape')
   code = str(unicode_code)
   code = code.replace('b\'', '').replace(r'\\', '%')
-  code = code.replace('\'', '').strip('_')
+  jdAddrName = code.replace('\'', '').strip('_')
   key = ''
   for dict_key in dict_select_area.keys():
     key = key + dict_key + '_'
-  key = key.strip('_')
-  jdAddrName = code
-  jdAddrId = key
-  wq_addr = '0%7C' + key + '%7C' + code + '%7C%7C'
-  regionAddress = key.replace('_', '%2C')
+  jdAddrId = key.strip('_')
+  wq_addr = '0%7C' + jdAddrId + '%7C' + jdAddrName + '%7C%7C'
+  regionAddress = jdAddrId.replace('_', '%2C')
   return (jd_area % (wq_addr, jdAddrId, jdAddrName, regionAddress))
 
 def jd(web_addr):  # 京东信息处理
