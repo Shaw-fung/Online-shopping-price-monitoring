@@ -1,5 +1,5 @@
 # Online shopping price monitoring
-## 监测购物网站商品价格提醒
+## 监测购物网站商品价格及库存提醒
 
 ```python
 # 设置从这里开始
