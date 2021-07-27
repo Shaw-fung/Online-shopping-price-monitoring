@@ -1,9 +1,9 @@
 # Online shopping price monitoring
-## 监测购物网站商品价格及库存提醒
+## 监控购物网站商品价格及库存提醒
 
 本脚本在Python3.8下编写,学习了两天Python所写。技术太菜。练习之作。
 
-可以监测库存及价格
+可以监控库存及价格
 由于京东存在多个仓库，需要选择你当前的地区
 ```python
 guding_cookie = False  # 是否设置固定京东cookie值，如果需要全自动化，需要启用，并修改jd_cookie_v
@@ -25,4 +25,4 @@ url = 'https://item.jd.com/56753694658.html'  # 欲监测购物商品网址
 mubiao_pay = 1999.00  # 预设价格
 sj_sendkey = 'key'  # 设置Server酱用于发信息的key，如没有，可以去Server酱免费注册一个！
 ```
-建议通过crontab定时运行，来进行监测价格及库存变化
+建议通过crontab定时运行，来进行监控价格及库存变化
