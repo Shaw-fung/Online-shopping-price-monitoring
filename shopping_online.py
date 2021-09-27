@@ -17,9 +17,7 @@ import os
 
 # 设置从这里开始
 goods = [ # 这里填写商品网址，以及你期望的价格，格式如下，可以填写多个商品
-         {'url':'https://item.jd.com/100019386658.html', 'expected_price': 2698.00},
-         {'url':'https://item.jd.com/6027207.html', 'expected_price': 28.90},
-         {'url':'https://item.jd.com/7152939.html', 'expected_price': 26.90},
+         {'url':'https://item.m.jd.com/product/100000626474.html', 'expected_price': 359.00},
          {'url':'https://item.jd.com/56753694658.html', 'expected_price': 1999.00}
 ]
 sj_sendkey = 'key'  # 设置Server酱用于推送信息的key，如没有，可以去Server酱免费注册一个！
