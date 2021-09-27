@@ -13,6 +13,7 @@ import requests
 import json5
 import random
 import time
+import os
 
 # 设置从这里开始
 goods = [ # 这里填写商品网址，以及你期望的价格，格式如下，可以填写多个商品
@@ -43,6 +44,11 @@ def midtext(all_str, start_str, end_str):  # 取中间文本函数
     end_weizhi = all_str.find(end_str, start_weizhi)
     if end_weizhi >= 0 :
       return all_str[start_weizhi:end_weizhi].strip()
+
+def f_get_goods_id(url):  # 取商品ID
+  filename = (os.path.basename(url))
+  filename = os.path.splitext(filename)
+  return (filename[0])
 
 def buquan_web_addr(web_addr):  # 用于补全网址，比如输入的时候没有输入http://就对网址前面进行补全
   if web_addr.startswith('http://') == False and web_addr.startswith('https://') == False:
@@ -115,9 +121,9 @@ def jd(web_addr):  # 京东信息处理
   if guding_cookie == False:  # 判断是否启用固定地区cookie值，不启用，每次都需选择地区。
     cookie = f_c_jd_cookie(f_get_jd_area_code())
     print('您当前地区的京东固定cookie值: ', cookie + '\n')
-    goods_all = f_get_goods_info(price_info_url % midtext(web_addr, '.com/', '.html'),cookie)
+    goods_all = f_get_goods_info(price_info_url % f_get_goods_id(web_addr),cookie)
   else:
-    goods_all = f_get_goods_info(price_info_url % midtext(web_addr, '.com/', '.html'),jd_cookie_v)
+    goods_all = f_get_goods_info(price_info_url % f_get_goods_id(web_addr),jd_cookie_v)
   goods_info['Name'] = goods_all['skuName']  # 取商品名称
   goods_info['Original_price'] = goods_all['stock']['jdPrice']['op']  # 取商品原价
   goods_info['Now_price'] = goods_all['stock']['jdPrice']['p']  # 取商品现价
