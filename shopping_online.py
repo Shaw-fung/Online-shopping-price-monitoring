@@ -139,7 +139,7 @@ def jd(web_addr):  # 京东信息处理
       send_message(sj_sendkey, message_title,message_contents.format(goods_info['Name'], goods_info['Goods_StateName'], goods_info['Now_price'], url))
       print('购买信息已经推送，请留意！')
     else:
-      print('目前价格超出预期或者商品无货，建议稍后再尝试！')
+      print('目前价格超出预期或商品无货，建议稍后再尝试！')
 
 def taobao(web_addr):  # 淘宝信息处理
   print('输入了淘宝网网址，目前淘宝网获取价格正在写。')
