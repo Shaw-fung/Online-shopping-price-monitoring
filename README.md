@@ -20,7 +20,7 @@ jd_cookie_v = 'commonAddress=0; mitemAddrName=; wq_addr=; jdAddrId=; jdAddrName=
 然后将获取的到的值填入
 > jd_cookie_v = '填入这里'
 
-最后设置好你需要查看的商品地址，你期望的价格，已经推送信息所用的key即可
+最后设置好你需要查看的商品地址，你期望的价格，以及推送信息所需要用的token即可
 ```python
 # 设置从这里开始
 # url填写商品地址，expected_price填写你期望的价格
@@ -28,6 +28,6 @@ jd_cookie_v = 'commonAddress=0; mitemAddrName=; wq_addr=; jdAddrId=; jdAddrName=
 {'url':'https://item.jd.com/6027207.html', 'expected_price': 28.90},
 {'url':'https://item.jd.com/7152939.html', 'expected_price': 26.90},
 {'url':'https://item.jd.com/56753694658.html', 'expected_price': 1999.00}
-sj_sendkey = 'key'  # 设置Server酱用于发信息的key，如没有，可以去Server酱免费注册一个！
+push_token = 'token'  # 设置pushplus用于推送信息的token，如没有，可以去http://www.pushplus.plus/免费注册一个！
 ```
 建议通过crontab定时运行，来进行监控价格及库存变化
