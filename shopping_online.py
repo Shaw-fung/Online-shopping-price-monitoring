@@ -145,7 +145,7 @@ def taobao(web_addr):  # 淘宝信息处理
   print('输入了淘宝网网址，目前淘宝网获取价格正在写。')
 
 def env(url):
-  if sj_sendkey.strip() == '':
+  if push_token.strip() == '':
     print('您未设置用于通知的push_token，将无法收到通知信息，程序退出！')
     exit()
   while url.strip() == '':
